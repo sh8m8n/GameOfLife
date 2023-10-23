@@ -30,21 +30,28 @@
         {
             this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.nudResolution = new System.Windows.Forms.NumericUpDown();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblCurrentGen = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.bStop = new System.Windows.Forms.Button();
+            this.bStart = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.nudDensity = new System.Windows.Forms.NumericUpDown();
-            this.bStart = new System.Windows.Forms.Button();
-            this.bStop = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.nudResolution = new System.Windows.Forms.NumericUpDown();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudResolution)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDensity)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudResolution)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -60,12 +67,7 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.splitContainer1.Panel1.Controls.Add(this.bStop);
-            this.splitContainer1.Panel1.Controls.Add(this.bStart);
-            this.splitContainer1.Panel1.Controls.Add(this.label2);
-            this.splitContainer1.Panel1.Controls.Add(this.nudDensity);
-            this.splitContainer1.Panel1.Controls.Add(this.label1);
-            this.splitContainer1.Panel1.Controls.Add(this.nudResolution);
+            this.splitContainer1.Panel1.Controls.Add(this.splitContainer2);
             // 
             // splitContainer1.Panel2
             // 
@@ -74,55 +76,63 @@
             this.splitContainer1.SplitterDistance = 144;
             this.splitContainer1.TabIndex = 0;
             // 
-            // nudResolution
+            // lblCurrentGen
             // 
-            this.nudResolution.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.nudResolution.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.nudResolution.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.nudResolution.ForeColor = System.Drawing.Color.AliceBlue;
-            this.nudResolution.Location = new System.Drawing.Point(11, 30);
-            this.nudResolution.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.nudResolution.Name = "nudResolution";
-            this.nudResolution.Size = new System.Drawing.Size(120, 25);
-            this.nudResolution.TabIndex = 1;
-            this.nudResolution.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.nudResolution.Value = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
+            this.lblCurrentGen.AutoSize = true;
+            this.lblCurrentGen.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblCurrentGen.ForeColor = System.Drawing.Color.AliceBlue;
+            this.lblCurrentGen.Location = new System.Drawing.Point(62, 19);
+            this.lblCurrentGen.Name = "lblCurrentGen";
+            this.lblCurrentGen.Size = new System.Drawing.Size(17, 19);
+            this.lblCurrentGen.TabIndex = 8;
+            this.lblCurrentGen.Text = "0";
+            this.lblCurrentGen.Click += new System.EventHandler(this.lblCurrentGen_Click);
             // 
-            // pictureBox1
+            // label3
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(915, 704);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.ForeColor = System.Drawing.Color.AliceBlue;
+            this.label3.Location = new System.Drawing.Point(32, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(87, 19);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Generation:";
             // 
-            // label1
+            // bStop
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.AliceBlue;
-            this.label1.Location = new System.Drawing.Point(11, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 19);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Cell Resolution";
+            this.bStop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
+            this.bStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bStop.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.bStop.ForeColor = System.Drawing.Color.AliceBlue;
+            this.bStop.Location = new System.Drawing.Point(11, 55);
+            this.bStop.Name = "bStop";
+            this.bStop.Size = new System.Drawing.Size(120, 38);
+            this.bStop.TabIndex = 6;
+            this.bStop.Text = "Stop";
+            this.bStop.UseVisualStyleBackColor = false;
+            this.bStop.Click += new System.EventHandler(this.bStop_Click);
+            // 
+            // bStart
+            // 
+            this.bStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
+            this.bStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bStart.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.bStart.ForeColor = System.Drawing.Color.AliceBlue;
+            this.bStart.Location = new System.Drawing.Point(11, 11);
+            this.bStart.Name = "bStart";
+            this.bStart.Size = new System.Drawing.Size(120, 38);
+            this.bStart.TabIndex = 5;
+            this.bStart.Text = "Start";
+            this.bStart.UseVisualStyleBackColor = false;
+            this.bStart.Click += new System.EventHandler(this.bStart_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label2.ForeColor = System.Drawing.Color.AliceBlue;
-            this.label2.Location = new System.Drawing.Point(11, 61);
+            this.label2.Location = new System.Drawing.Point(11, 174);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 19);
             this.label2.TabIndex = 4;
@@ -134,7 +144,7 @@
             this.nudDensity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.nudDensity.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.nudDensity.ForeColor = System.Drawing.Color.AliceBlue;
-            this.nudDensity.Location = new System.Drawing.Point(12, 83);
+            this.nudDensity.Location = new System.Drawing.Point(12, 196);
             this.nudDensity.Minimum = new decimal(new int[] {
             2,
             0,
@@ -145,38 +155,80 @@
             this.nudDensity.TabIndex = 3;
             this.nudDensity.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.nudDensity.Value = new decimal(new int[] {
-            2,
+            4,
             0,
             0,
             0});
             // 
-            // bStart
+            // label1
             // 
-            this.bStart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.bStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bStart.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bStart.ForeColor = System.Drawing.Color.AliceBlue;
-            this.bStart.Location = new System.Drawing.Point(12, 135);
-            this.bStart.Name = "bStart";
-            this.bStart.Size = new System.Drawing.Size(120, 38);
-            this.bStart.TabIndex = 5;
-            this.bStart.Text = "Start";
-            this.bStart.UseVisualStyleBackColor = false;
-            this.bStart.Click += new System.EventHandler(this.bStart_Click);
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.AliceBlue;
+            this.label1.Location = new System.Drawing.Point(11, 121);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(108, 19);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Cell Resolution";
             // 
-            // bStop
+            // nudResolution
             // 
-            this.bStop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
-            this.bStop.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bStop.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bStop.ForeColor = System.Drawing.Color.AliceBlue;
-            this.bStop.Location = new System.Drawing.Point(14, 179);
-            this.bStop.Name = "bStop";
-            this.bStop.Size = new System.Drawing.Size(120, 38);
-            this.bStop.TabIndex = 6;
-            this.bStop.Text = "Stop";
-            this.bStop.UseVisualStyleBackColor = false;
-            this.bStop.Click += new System.EventHandler(this.bStop_Click);
+            this.nudResolution.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
+            this.nudResolution.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.nudResolution.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nudResolution.ForeColor = System.Drawing.Color.AliceBlue;
+            this.nudResolution.Location = new System.Drawing.Point(11, 143);
+            this.nudResolution.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.nudResolution.Name = "nudResolution";
+            this.nudResolution.Size = new System.Drawing.Size(120, 25);
+            this.nudResolution.TabIndex = 1;
+            this.nudResolution.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.nudResolution.Value = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.label2);
+            this.splitContainer2.Panel1.Controls.Add(this.bStart);
+            this.splitContainer2.Panel1.Controls.Add(this.nudDensity);
+            this.splitContainer2.Panel1.Controls.Add(this.bStop);
+            this.splitContainer2.Panel1.Controls.Add(this.label1);
+            this.splitContainer2.Panel1.Controls.Add(this.nudResolution);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.lblCurrentGen);
+            this.splitContainer2.Panel2.Controls.Add(this.label3);
+            this.splitContainer2.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer2_Panel2_Paint);
+            this.splitContainer2.Size = new System.Drawing.Size(144, 706);
+            this.splitContainer2.SplitterDistance = 631;
+            this.splitContainer2.TabIndex = 9;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(45)))), ((int)(((byte)(47)))));
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(915, 704);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
             // 
             // timer1
             // 
@@ -195,13 +247,18 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nudResolution)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudDensity)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudResolution)).EndInit();
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel1.PerformLayout();
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            this.splitContainer2.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -217,6 +274,9 @@
         private System.Windows.Forms.Button bStop;
         private System.Windows.Forms.Button bStart;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lblCurrentGen;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.SplitContainer splitContainer2;
     }
 }
 
